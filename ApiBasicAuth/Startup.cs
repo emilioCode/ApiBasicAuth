@@ -51,7 +51,9 @@ namespace ApiBasicAuth
             }
 
             app.UseHttpsRedirection();
-
+            app.UseCors(x =>
+                x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()
+            );
             app.UseRouting();
 
             app.UseAuthentication(); // Include this
